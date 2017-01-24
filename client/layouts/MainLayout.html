@@ -1,7 +1,10 @@
  <template name="MainLayout">
  	{{> Header}}
  	{{> SideNav}}
- 	<main class="main-layout">
-		{{> Template.dynamic template=main}}
- 	</main>
+     <main>
+         {{> Template.dynamic template=content }}
+         <!--<div class="billboard">
+             <h2>Welcome to our system</h2>
+         </div>-->
+     </main>
  </template>

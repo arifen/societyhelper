@@ -1,0 +1,36 @@
+<template name="showtaker">
+    <div class="text-center" style="padding:50px 0">
+        <div class="logo">Product Taker Information</div>
+        <!-- Main Form -->
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Email Address</th>
+                        <th>Product Desc</th>
+                        <th>UserType</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each productTakers}}
+                        <tr>
+                            <td>
+                                {{#with userEmailAddress peopleid}}
+                                    {{#each emails}}
+                                        {{address}}
+                                    {{/each}}
+                                {{/with}}
+                            </td>
+                            <td>{{productdes}}</td>
+                            {{#if takerCheck userType }}
+                                <td>Taker</td>
+                            {{/if}}
+                            <td>{{formatDate createdAt}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

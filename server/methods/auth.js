@@ -15,5 +15,21 @@ Meteor.methods({
 
         var id = Accounts.createUser(user);
         return id;
+    },
+    'peopleDonateProductInsert'(id,desc,type){
+        PeopleProduct.insert({
+            peopleid:id,
+            productdes:desc,
+            userType: type,
+            createdAt: new Date(),
+        });
+    },
+    'peopleNeedProductInsert'(id,desc,type){
+        PeopleProduct.insert({
+            peopleid:id,
+            productdes:desc,
+            userType: type,
+            createdAt: new Date(),
+        });
     }
-})
+});

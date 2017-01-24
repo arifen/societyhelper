@@ -1,0 +1,35 @@
+<template name="showdonar">
+    <div class="text-center" style="padding:50px 0">
+        <div class="logo">Product Donar Information</div>
+        <!-- Main Form -->
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Email Address</th>
+                        <th>Product Desc</th>
+                        <th>UserType</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each productDonars}}
+                        <tr>
+                            <td>{{#with userEmailAddress peopleid}}
+                                    {{#each emails}}
+                                        {{address}}
+                                    {{/each}}
+                                {{/with}}
+                            </td>
+                            <td>{{productdes}}</td>
+                            {{#if donarCheck userType }}
+                                <td>Donar</td>
+                            {{/if}}
+                            <td>{{formatDate createdAt}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

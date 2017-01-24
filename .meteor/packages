@@ -32,3 +32,5 @@ fortawesome:fontawesome
 aldeed:collection2
 aldeed:autoform
 insecure
+#autopublish
+momentjs:moment

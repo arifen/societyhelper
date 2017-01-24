@@ -1,6 +1,6 @@
 /*import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';*/
-
-//import './main.html';
-
+Template.registerHelper('formatDate', function(date) {
+    return moment(date).format('MMM-DD-YYYY');
+});
 
