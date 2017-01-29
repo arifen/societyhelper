@@ -3,7 +3,6 @@
  */
 
 import { PeopleProduct } from '../../collections/peoplemeet';
-//import { Users} from '../../collections/peoplemeet';
 
 Template.showdonar.onCreated(function(){
    Meteor.subscribe('peopleProductCollection');
