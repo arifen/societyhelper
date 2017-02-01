@@ -9,5 +9,19 @@
     "bcrypt": "^1.0.2",
     "meteor-node-stubs": "~0.2.0",
     "mongoose": "~4.7.6"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arifen/societyhelper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arifen/societyhelper/issues"
+  },
+  "homepage": "https://github.com/arifen/societyhelper#readme",
+  "description": ""
 }

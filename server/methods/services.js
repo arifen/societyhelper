@@ -9,3 +9,4 @@ fetchListByType = function (type) {
 fetchListById = function (id) {
     return Meteor.users.find({_id:id});
 };
+

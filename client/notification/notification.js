@@ -12,11 +12,13 @@ Template.notification.onCreated(function(){
     'click .donarnoti':function(){
         Meteor.call('sendEmailtoTakker',function(err,res){
             if(!err){
-                res.forEach(function(emailaddress){
-                    Meteor.call('sendEmail',emailaddress,'sarifenju@gmail.com','donar found ','Somebody wants to donate your' +
-                        ' needed product');
+                Meteor.call('emailSendPromise', res, function (err,response) {
+                     if(!err){
+                        alert(response);
+                     }else {
+                         alert(err);
+                     }
                 });
-                alert('taker message has been send');
             }
 
         });
