@@ -10,9 +10,9 @@ Template.notification.onCreated(function(){
  Template.notification.events({
 
     'click .donarnoti':function(){
-        Meteor.call('sendEmailtoTakker',function(err,res){
+        Meteor.call('sendEmailtoDonar',function(err,res){
             if(!err){
-                Meteor.call('emailSendPromise', res, function (err,response) {
+                Meteor.call('emailSendPromise', res,'Donar Notification','Somebody wants your donate Product', function (err,response) {
                      if(!err){
                         alert(response);
                      }else {
@@ -24,6 +24,17 @@ Template.notification.onCreated(function(){
         });
     },
      'click .takernoti':function(){
-         console.log("taker click");
+         Meteor.call('sendEmailtoTakker',function(err,res){
+             if(!err){
+                 Meteor.call('emailSendPromise', res,'Takker Notification','Somebody wants to donate your needed product', function (err,response) {
+                     if(!err){
+                         alert(response);
+                     }else {
+                         alert(err);
+                     }
+                 });
+             }
+
+         });
      }
  });

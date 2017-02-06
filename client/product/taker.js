@@ -5,7 +5,10 @@
 import { PeopleProduct } from '../../collections/peoplemeet';
 
 Template.showtaker.onRendered(function(){
-    Meteor.subscribe('peopleProductCollection');
+    var self = this;
+    self.autorun(function (){
+        self.subscribe('peopleProductCollection');
+    });
 });
 
 Template.showtaker.helpers({

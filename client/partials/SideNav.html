@@ -1,12 +1,15 @@
 <template name="SideNav">
 	<nav class="side-nav">
         <ul>
+        {{#if currentUser }}
             <li><a href="/home"><i class="glyphicon glyphicon-home"></i>Home</a></li>
             <li><a href="/giveproduct"><i class="glyphicon glyphicon-plus"></i>Denote Product</a></li>
             <li><a href="/takeproduct"><i class="glyphicon glyphicon-minus"></i>Take Product</a></li>
-            <li><a href="/sendnotification"><i class="glyphicon glyphicon-refresh"></i>Notification Send</a></li>
-            <li><a href="/donarlist"><i class="glyphicon glyphicon-refresh"></i>Show Donar List</a></li>
-            <li><a href="/takerlist"><i class="glyphicon glyphicon-refresh"></i>Show Taker List</a></li>
+            <li><a href="/sendnotification"><i class="glyphicon glyphicon-envelope"></i>Notification Send</a></li>
+            <li><a href="/donarlist"><i class="glyphicon glyphicon-list-alt"></i>Show Donar List</a></li>
+            <li><a href="/takerlist"><i class="glyphicon glyphicon-list-alt"></i>Show Taker List</a></li>
+            <li ><a href="#" id="logout" ><i class="glyphicon glyphicon-cog"></i>Logout</a></li>
+            {{/if}}
         </ul>
 	</nav>
 </template>

@@ -41,30 +41,45 @@ Meteor.methods({
     'takePeopleList'(){
         return fetchListByType('D');
     },
-    'sendemail'(emailaddress){
+    /*'sendemail'(emailaddress){
 
-    },
-    'sendEmailtoTakker'(){
+    },*/
+    'sendEmailtoDonar'(){
         var doanrs = fetchListByType('D');
         var takers = fetchListByType('N');
         var users;
         var emailAddresses = [];
 
-        //return doanrs.fetch();
         doanrs.forEach( function (donar)
         {
             takers.forEach(function (taker){
                 if(donar.productdes === taker.productdes){
                   //  console.log(taker.peopleid);
-                  users=fetchListById(taker.peopleid);
+                  users=fetchListById(donar.peopleid);
                   emailAddresses.push(users.fetch()[0].emails[0].address);
                 }
             });
         });
 
         return emailAddresses;
-        /*emailAddress.forEach(function(arrayList){
-            console.log(arrayList);
-        });*/
+    },
+    'sendEmailtoTakker'(){
+        var donars = fetchListByType('D');
+        var takers = fetchListByType('N');
+        var users;
+        var emailAddresses = [];
+
+        takers.forEach( function (taker)
+        {
+            donars.forEach(function (donar){
+                if(donar.productdes === taker.productdes){
+                    //  console.log(taker.peopleid);
+                    users=fetchListById(taker.peopleid);
+                    emailAddresses.push(users.fetch()[0].emails[0].address);
+                }
+            });
+        });
+
+        return emailAddresses;
     }
 });

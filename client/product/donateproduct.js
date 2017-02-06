@@ -9,8 +9,9 @@ Template.donate.events({
         Meteor.call('peopleDonateProductInsert', Meteor.userId(),event.target.productname.value,'D', function(err){
             if(!err){
                 console.log('product inserted');
-                FlowRouter.go('/giveproduct');
+                FlowRouter.go('/giveproductsuccess');
             }else{
+                FlowRouter.go('/giveproducterror');
                 console.log('product does not inserted');
             }
 

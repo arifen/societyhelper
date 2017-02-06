@@ -5,8 +5,11 @@
 import { PeopleProduct } from '../../collections/peoplemeet';
 
 Template.showdonar.onCreated(function(){
-   Meteor.subscribe('peopleProductCollection');
-   Meteor.subscribe('usersCollection');
+    var self = this;
+    self.autorun(function (){
+        self.subscribe('peopleProductCollection');
+        self.subscribe('usersCollection');
+    });
 });
 
 Template.showdonar.helpers({

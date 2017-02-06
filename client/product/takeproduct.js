@@ -9,8 +9,9 @@ Template.take.events({
         Meteor.call('peopleNeedProductInsert', Meteor.userId(),event.target.productname.value,'N', function(err){
             if(!err){
                 console.log('product inserted');
-                FlowRouter.go('/takeproduct');
+                FlowRouter.go('/takeproductsuccess');
             }else{
+                FlowRouter.go('/takeproducterror');
                 console.log('product does not inserted');
             }
 

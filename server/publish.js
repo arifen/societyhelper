@@ -12,8 +12,3 @@ Meteor.publish('usersCollection', function(){
     //return Users.find({});
     return Meteor.users.find();
 });
-/*emailSendPromise(res).then((response)=>{
- alert(response);
- }).catch((error)=>{
- alert('error happen');
- });*/

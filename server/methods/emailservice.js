@@ -1,11 +1,12 @@
 /**
  * Created by arifen on 2/2/17.
  */
-let emailSending= ( emails, promise ) => {
+let emailSending= ( emails,subject,body, promise ) => {
     emails.forEach(function(emailaddress){
         try{
-            Meteor.call('sendEmail',emailaddress,'sarifenju@gmail.com','donar found ','Somebody wants to donate your' +
-                ' needed product');
+            Meteor.call('sendEmail',emailaddress,'sarifenju@gmail.com',subject,body/*'donar found ','Somebody wants to
+             donate your' +
+                ' needed product'*/);
             console.log("EMAL SENT.....");
         }catch(exception){
             promise.error('email send error');
@@ -17,9 +18,9 @@ let emailSending= ( emails, promise ) => {
 
 
 Meteor.methods({
-    'emailSendPromise':function (emails){
+    'emailSendPromise':function (emails,subject,body){
         return new Promise( ( resolve, reject ) => {
-            emailSending( emails, { response: resolve, error: reject } );
+            emailSending( emails,subject,body, { response: resolve, error: reject } );
         });
     },
     sendEmail: function (to, from, subject, text) {
